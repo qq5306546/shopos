@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>H+ 后台主题UI框架 - 主页</title>
+
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation" id="navbar">
+            
+        </nav>
+        <!--左侧导航结束-->
+
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                            <div class="form-group">
+                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="hidden-xs">
+                            <a href="index_v1.html" class="J_menuItem" data-index="0"><i class="fa fa fa-sign-out"></i> 退出</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 面包屑导航开始 -->
+            <div class="row content-tabs">
+                
+            </div>
+            <!-- 面包屑导航结束 -->
+            <!-- 动态菜单内容开始 -->
+            <div class="row J_mainContent" id="content-main">
+                
+            </div>
+            <!-- 动态菜单内容结束 -->
+            <div class="footer">
+                <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script type="text/babel">
+        var NavbarUser = React.createClass({
+            render:function(){
+                return (
+                    <li className="nav-header">
+                        <div className="dropdown profile-element">
+                            <span><img alt="image" className="img-circle" src="img/profile_small.jpg" /></span>
+                            <a data-toggle="dropdown" className="dropdown-toggle" href="#">
+                                <span className="clear">
+                               <span className="block m-t-xs"><strong className="font-bold">Beaut-zihan</strong></span>
+                                <span className="text-muted text-xs block">超级管理员<b className="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul className="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a className="J_menuItem" href="form_avatar.html">修改头像</a></li>
+                                <li><a className="J_menuItem" href="profile.html">个人资料</a></li>
+                                <li><a className="J_menuItem" href="contacts.html">联系我们</a></li>
+                                <li><a className="J_menuItem" href="mailbox.html">信箱</a></li>
+                                <li className="divider"></li>
+                                <li><a href="login.html">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="logo-element">shopos</div>
+                    </li>
+                )
+            }
+        });
+
+        var NavbarMenu = React.createClass({
+            render:function(){
+                return (
+                    <li>
+                        <a href="#">
+                            <i className="fa fa-home"></i>
+                            <span className="nav-label">系统管理</span>
+                            <span className="fa arrow"></span>
+                        </a>
+                        <ul className="nav nav-second-level">
+                            <li>
+                                <a className="J_menuItem" href="#" data-index="0">主页示例一</a>
+                            </li>
+                            <li>
+                                <a className="J_menuItem" href="#">主页示例二</a>
+                            </li>
+                            <li>
+                                <a className="J_menuItem" href="#">主页示例三</a>
+                            </li>
+                            <li>
+                                <a className="J_menuItem" href="#">主页示例四</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">主页示例五</a>
+                            </li>
+                        </ul>
+                    </li>
+                )
+            }
+        });
+
+        var Navbar = React.createClass({
+            render:function(){
+                return (
+                    <div className="sidebar-collapse">
+                        <ul className="nav" id="side-menu">
+                            <NavbarUser />
+                            <li>
+                                <a href="#">
+                                    <i className="fa fa-home"></i>
+                                    <span className="nav-label">主页</span>
+                                </a>
+                            </li>
+                            <NavbarMenu />
+                        </ul>
+                    </div>
+                )
+            }
+        });
+
+        ReactDOM.render(<Navbar />, document.getElementById('navbar'));
+    </script>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="js/plugins/jquery.metisMenu.js"></script>
+    <script src="js/plugins/jquery.slimscroll.min.js"></script>
+    <script src="js/hplus.min.js?v=4.0.0"></script>
+    <script src="js/plugins/pace.min.js"></script>
+</body>
+
+</html>
